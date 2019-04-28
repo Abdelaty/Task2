@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             generateNewsNetworkCall(newsCountry);
         } catch (Exception e) {
-            Log.v(getLocalClassName(), e.getMessage().toString());
+            Log.v(getLocalClassName(), e.getMessage());
             showPlaceHolder();
         }
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 generateNewsNetworkCall(newsCountry);
             }
-        }, 0, 1000);
+        }, 0, 500);
     }
 
     void generateNewsNetworkCall(String newsCountry) {
